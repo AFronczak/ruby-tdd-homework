@@ -1,9 +1,10 @@
 require 'minitest/autorun'
-require 'change.rb'
+require 'change'
 
-class TestThing < MiniTest::Test
-  def test_something
-    assert true
+class AcceptanceTest < MiniTest::Test
+  def test_if_coins_works
+    coins = Coin.new
+    assert_equal 0, coins(0)
   end
 end
 
