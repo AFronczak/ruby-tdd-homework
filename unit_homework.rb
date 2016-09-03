@@ -13,6 +13,7 @@ class ChangeTest < MiniTest::Test
   end
   def test_if_shows_nickles
     # change shows nickles
+    assert_equal [0,0,1,1], Coin.new.make_change(6)
     skip
   end
   def test_if_shows_dimes
