@@ -26,5 +26,6 @@ class ChangeTest < MiniTest::Test
     # change shows quarters
     assert_equal [1,0,0,0], Coin.new.make_change(25)
     assert_equal [1,1,1,1], Coin.new.make_change(41)
+    assert_equal [2,2,0,1], Coin.new.make_change(71)
   end
 end
