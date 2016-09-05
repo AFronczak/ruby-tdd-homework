@@ -1,9 +1,13 @@
 class FizzBuzz
   def buzzer(num)
-    if num % 3 == 0
-      return "Fizz"
+    if num % 3 == 0 && num % 5 == 0
+      return "fizzbuzz"
+    elsif num % 3 == 0
+      return "fizz"
+    elsif num % 5 == 0
+      return "buzz"
     else
-    return num
+      return num
     end
   end
 end
