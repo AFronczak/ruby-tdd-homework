@@ -7,16 +7,18 @@ require_relative 'anagram'
 class AnagramTest < Minitest::Test
   # first test determines if we are storing out word correctly to compare
   def test_if_word_saved_alphabetically
-    assert_equal "arst", Anagram.new.anagrams("star", %w(wats rats))
+    # test below when anagrams() return rearranges word
+    # assert_equal "arst", Anagram.new.anagrams("star", %w(wats rats))
+    skip
   end
 
   def test_if_same_word
-    # assert_equal "", Anagram.new.anagrams("Hello", %w("Hello"))
-    skip
+    assert_equal [], Anagram.new.anagrams("Hello", %w(Hello))
+    assert_equal [], Anagram.new.anagrams("Hello", %w(Hello hi yes))
   end
 
   def test_word_comparison
-    # assert_equal "star", Anagram.new.anagrams("star",%w(rats))
-    skip
+    assert_equal ["rats"], Anagram.new.anagrams("star", %w(rats buzz))
+    assert_equal ["fun"], Anagram.new.anagrams("nuf", %w(fun with arrays))
   end
 end
